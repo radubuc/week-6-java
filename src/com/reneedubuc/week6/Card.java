@@ -24,6 +24,7 @@ public class Card {
 		this.suit = suit;
 	}
 	
+	//Returns card value spelled out and suit together
 	public String describeCard() {
 		String str = "";
 			switch(value) {
