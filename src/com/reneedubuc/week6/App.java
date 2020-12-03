@@ -12,7 +12,7 @@ public class App {
 		//Instantiates new deck object, shuffles deck, and draws top card from deck
 		Deck deck = new Deck();
 		deck.shuffle();
-		deck.draw();
+		//deck.draw();
 		
 		//Deals from deck
 		for(int i = 0; i < 52; i++) {
@@ -22,24 +22,28 @@ public class App {
 				player2.draw(deck);
 			}
 		}
-		player1.draw(deck);
-		player2.draw(deck);
+//		player1.draw(deck);
+//		player2.draw(deck);
 		
 		//Flips a card from each player's hand
-		Card c = player1.flip();
-		Card d = player2.flip();
+//		Card c = player1.flip();
+//		Card d = player2.flip();
 		
 		//Describes flipped cards and compares with boolean
-		System.out.println(c.describeCard() + " " + d.describeCard());
-		System.out.println(c.getValue() > d.getValue());		
+//		System.out.println(c.describeCard() + " " + d.describeCard());
+//		System.out.println(c.getValue() > d.getValue());		
 		
 		//Compares card values and increments score
 		for(int i = 0; i < 26; i++){
-			int p1 = player1.flip().getValue();
-			int p2 = player2.flip().getValue();
+			Card p1Card = player1.flip();
+			int p1 = p1Card.getValue();
+			Card p2Card = player2.flip();
+			int p2 = p2Card.getValue();
 			if (p1 > p2) {
+				System.out.println(p1Card.describeCard().toUpperCase() + " vs " + p2Card.describeCard());
 				player1.incrementScore();
 			}else if (p2 > p1) {
+				System.out.println(p1Card.describeCard() + " vs "+ p2Card.describeCard().toUpperCase());
 				player2.incrementScore();
 			}else {
 				System.out.println("Tie");
@@ -47,7 +51,7 @@ public class App {
 		}
 			
 		//Displays final score and winner
-		System.out.println("Rhett's score is: " + player1.score + "Link's score is: " + player2.score);
+		System.out.println("Rhett's score is: " + player1.score + " " + "| " + "Link's score is: " + player2.score);
 		if(player1.score > player2.score) {
 			System.out.println("Rhett wins again!");
 		} else if (player2.score > player1.score) {

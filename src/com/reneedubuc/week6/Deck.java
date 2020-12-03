@@ -17,7 +17,7 @@ public class Deck {
 			for(int j = 2; j <= 14; j++) {
 				Card fullCard = new Card(j, suit[i]); 
 				deck.add(fullCard);
-				System.out.println(fullCard.describeCard()); //Make counter to check how many cards are printing out. It's printing deck out 3 times?
+//				System.out.println(fullCard.describeCard()); //Make counter to check how many cards are printing out. It's printing deck out 3 times?
 			}
 		}
 	}

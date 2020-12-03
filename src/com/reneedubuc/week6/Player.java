@@ -11,7 +11,7 @@ public class Player {
 	
 	String name;
 	int score = 0;
-	static List<Card> hand = new ArrayList<Card>();
+	List<Card> hand = new ArrayList<Card>();
 	
 	
 //	public String hand() {
@@ -42,8 +42,6 @@ public class Player {
 		return hand.toString(); //?
 	}
 	
-	List<Card> d = new ArrayList<Card>();
-	Deck deck = new Deck(); 
 	
 	//Draws card from deck and adds it to hand
 	public void draw(Deck deck) {
